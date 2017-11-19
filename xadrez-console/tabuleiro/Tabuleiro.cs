@@ -4,7 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace xadrez_console.tabuleiro {
+namespace tabuleiro {
     class Tabuleiro {
+        public int linhas { get; set; }
+        public int colunas { get; set; }
+        private Peca[,] pecas;
+
+        public Tabuleiro(int linhas , int colunas) {
+            this.linhas = linhas;
+            this.colunas = colunas;
+            this.pecas = new Peca[linhas, colunas];
+        }
+
+        // Acessar a peça que esta como private 
+        public Peca peca(int linha, int coluna) {
+            return pecas[linha, coluna];
+        }
     }
 }
