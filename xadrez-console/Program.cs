@@ -18,6 +18,13 @@ namespace xadrez_console {
                     Console.WriteLine();
                     Console.Write("ORIGEM: ");                   
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    //mostrar o tabuleiro marcado com os possiveis movimentos da peça
+                    bool[,] possiveisMovimentosMarcados = partida.tab.peca(origem).movimentosPossiveis();
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, possiveisMovimentosMarcados);
+
+                    Console.WriteLine();
                     Console.Write("DESTINO: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
