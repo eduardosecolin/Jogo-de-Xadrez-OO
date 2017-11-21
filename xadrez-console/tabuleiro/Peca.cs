@@ -20,6 +20,23 @@ namespace tabuleiro {
         public void incrementarQtdMovimentos() {
             qtdMovimento++;
         }
+        // metodo que verifica se a peça esta bloqueada ou seja, verifica se a matriz do metodo abstrato
+        // movimentosPossiveis() tem linhas ou colunas com retorno true
+        public bool existeMovimentosPossiveis() {
+            bool[,] mat = movimentosPossiveis();
+            for(int i = 0; i < tab.linhas; i++) {
+                for(int j = 0; j < tab.linhas; j++) {
+                    if(mat[i,j] == true) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        // metodo para verificar se pode mover para a posição passada como argumento
+        public bool podeMover(Posicao pos) {
+            return movimentosPossiveis()[pos.linha,pos.coluna];
+        }
 
         public abstract bool[,] movimentosPossiveis();
     }
