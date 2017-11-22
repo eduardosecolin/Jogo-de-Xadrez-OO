@@ -194,38 +194,38 @@ namespace xadrez {
             //JOGADOR 1
             colocarNovasPecas('a', 1, new Torre(tab, Cor.Branco));
             colocarNovasPecas('h', 1, new Torre(tab, Cor.Branco));
-            //colocarNovasPecas('b', 1, new Bispo(tab, Cor.Branco));
-            //colocarNovasPecas('g', 1, new Cavalo(tab, Cor.Branco));
-            //colocarNovasPecas('c', 1, new Bispo(tab, Cor.Branco));
-            //colocarNovasPecas('f', 1, new Cavalo(tab, Cor.Branco));
-            //colocarNovasPecas('d', 1, new Dama(tab, Cor.Branco));
+            colocarNovasPecas('f', 1, new Bispo(tab, Cor.Branco));
+            colocarNovasPecas('g', 1, new Cavalo(tab, Cor.Branco));
+            colocarNovasPecas('c', 1, new Bispo(tab, Cor.Branco));
+            colocarNovasPecas('b', 1, new Cavalo(tab, Cor.Branco));
+            colocarNovasPecas('d', 1, new Dama(tab, Cor.Branco));
             colocarNovasPecas('e', 1, new Rei(tab, Cor.Branco));
-            //colocarNovasPecas('a', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('b', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('c', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('d', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('e', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('f', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('g', 2, new Peao(tab, Cor.Branco));
-            //colocarNovasPecas('h', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('a', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('b', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('c', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('d', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('e', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('f', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('g', 2, new Peao(tab, Cor.Branco));
+            colocarNovasPecas('h', 2, new Peao(tab, Cor.Branco));
 
             // JOGADOR 2
             colocarNovasPecas('a', 8, new Torre(tab, Cor.Preto));
-            //colocarNovasPecas('h', 8, new Torre(tab, Cor.Preto));
-            //colocarNovasPecas('b', 8, new Bispo(tab, Cor.Preto));
-            //colocarNovasPecas('g', 8, new Cavalo(tab, Cor.Preto));
-            //colocarNovasPecas('c', 8, new Bispo(tab, Cor.Preto));
-            //colocarNovasPecas('f', 8, new Cavalo(tab, Cor.Preto));
-            //colocarNovasPecas('d', 8, new Dama(tab, Cor.Preto));
+            colocarNovasPecas('h', 8, new Torre(tab, Cor.Preto));
+            colocarNovasPecas('f', 8, new Bispo(tab, Cor.Preto));
+            colocarNovasPecas('g', 8, new Cavalo(tab, Cor.Preto));
+            colocarNovasPecas('c', 8, new Bispo(tab, Cor.Preto));
+            colocarNovasPecas('b', 8, new Cavalo(tab, Cor.Preto));
+            colocarNovasPecas('d', 8, new Dama(tab, Cor.Preto));
             colocarNovasPecas('e', 8, new Rei(tab, Cor.Preto));
-            //colocarNovasPecas('a', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('b', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('c', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('d', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('e', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('f', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('g', 7, new Peao(tab, Cor.Preto));
-            //colocarNovasPecas('h', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('a', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('b', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('c', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('d', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('e', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('f', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('g', 7, new Peao(tab, Cor.Preto));
+            colocarNovasPecas('h', 7, new Peao(tab, Cor.Preto));
         }
     }
 }
