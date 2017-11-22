@@ -20,6 +20,9 @@ namespace tabuleiro {
         public void incrementarQtdMovimentos() {
             qtdMovimento++;
         }
+        public void decrementarQtdMovimentos() {
+            qtdMovimento--;
+        }
         // metodo que verifica se a peça esta bloqueada ou seja, verifica se a matriz do metodo abstrato
         // movimentosPossiveis() tem linhas ou colunas com retorno true
         public bool existeMovimentosPossiveis() {

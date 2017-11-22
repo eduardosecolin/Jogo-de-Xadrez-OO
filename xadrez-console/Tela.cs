@@ -15,6 +15,9 @@ namespace xadrez_console {
             imprimirPecasCapturadas(partida);
             Console.WriteLine("\nTURNO: " + partida.turno);
             Console.WriteLine("AGUARDANDO JOGADA: " + partida.jogadorAtual);
+            if (partida.xeque == true) {
+                Console.WriteLine("°°°° XEQUE! °°°°");
+            }
         }
         // imprime na tela as peças capturadas chamando o metodo imprimirConjunto(), onde as peças estao guardadas
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida) {
