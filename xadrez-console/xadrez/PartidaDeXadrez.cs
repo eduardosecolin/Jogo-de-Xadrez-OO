@@ -62,8 +62,13 @@ namespace xadrez {
             }else {
                 xeque = false;
             }
-            turno++;
-            mudarJogador();
+            if (testeXequeMate(adversaria(jogadorAtual))) {
+                terminada = true;
+            }
+            else {
+                turno++;
+                mudarJogador();
+            }
         }
         //tratando os possiveis erros na escolha das peças e movimentos de origem - metodo que valida a posição de origem
         public void validarPosicaoDeOrigem(Posicao pos) {
@@ -147,9 +152,35 @@ namespace xadrez {
             return false;
         }
 
-        /*********************************** FIM ****************************************************************************/
+        /*********************************** FIM *********************************************************************************/
 
 
+        /************************* IMPLEMENTAÇÃO DO CHEQUE-MATE ******************************************************************/
+        public bool testeXequeMate(Cor cor) {
+            if (!estaEmXeque(cor)) {
+                return false;
+            }
+            foreach (Peca item in pecasEmJogo(cor)) {
+                bool[,] mat = item.movimentosPossiveis();
+                for(int i = 0; i < tab.linhas; i++) {
+                    for(int j = 0; j < tab.colunas; j++) {
+                        if(mat[i,j] == true) {
+                            Posicao origem = item.posicao;
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecaCapturada = executaMovimento(origem, destino);
+                            bool testeXeque = estaEmXeque(cor);
+                            desfazMovimento(origem, destino, pecaCapturada);
+                            if (!testeXeque) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        /*********************************** FIM *********************************************************************************/
 
 
 
@@ -162,7 +193,7 @@ namespace xadrez {
         public void colocarPecas() {
             //JOGADOR 1
             colocarNovasPecas('a', 1, new Torre(tab, Cor.Branco));
-            //colocarNovasPecas('h', 1, new Torre(tab, Cor.Branco));
+            colocarNovasPecas('h', 1, new Torre(tab, Cor.Branco));
             //colocarNovasPecas('b', 1, new Bispo(tab, Cor.Branco));
             //colocarNovasPecas('g', 1, new Cavalo(tab, Cor.Branco));
             //colocarNovasPecas('c', 1, new Bispo(tab, Cor.Branco));

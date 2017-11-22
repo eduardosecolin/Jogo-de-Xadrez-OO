@@ -14,9 +14,14 @@ namespace xadrez_console {
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
             Console.WriteLine("\nTURNO: " + partida.turno);
-            Console.WriteLine("AGUARDANDO JOGADA: " + partida.jogadorAtual);
-            if (partida.xeque == true) {
-                Console.WriteLine("°°°° XEQUE! °°°°");
+            if (!partida.terminada) {
+                Console.WriteLine("AGUARDANDO JOGADA: " + partida.jogadorAtual);
+                if (partida.xeque == true) {
+                    Console.WriteLine("°°°° XEQUE! °°°°");
+                }
+            }else {
+                Console.WriteLine("¨¨¨ XEQUE-MATE \\(°O°)/ ¨¨¨");
+                Console.WriteLine("VENCEDOR = " + partida.jogadorAtual);
             }
         }
         // imprime na tela as peças capturadas chamando o metodo imprimirConjunto(), onde as peças estao guardadas
