@@ -8,6 +8,39 @@ using xadrez;
 
 namespace xadrez_console {
     class Tela {
+        // imprimi na tela a partida de xadrez
+        public static void imprimirPartida(PartidaDeXadrez partida) {
+            imprimirTabuleiro(partida.tab);
+            Console.WriteLine();
+            imprimirPecasCapturadas(partida);
+            Console.WriteLine("\nTURNO: " + partida.turno);
+            Console.WriteLine("AGUARDANDO JOGADA: " + partida.jogadorAtual);
+        }
+        // imprime na tela as peças capturadas chamando o metodo imprimirConjunto(), onde as peças estao guardadas
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida) {
+            Console.WriteLine("PEÇAS CAPTURADAS");
+            Console.Write("BRANCAS: ");
+            ConsoleColor aux1 = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.White;
+            imprimirConjunto(partida.pecasCapturadas(Cor.Branco));
+            Console.ForegroundColor = aux1;
+
+            Console.Write(" | PRETAS: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            imprimirConjunto(partida.pecasCapturadas(Cor.Preto));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+        // imprime o conjunto de peças guardadas(capturadas)
+        public static void imprimirConjunto(HashSet<Peca> imprimirPeca) {
+            Console.Write("[");
+            foreach (Peca item in imprimirPeca) {
+                Console.Write(item + " ");
+            }
+            Console.Write("]");
+        }
+
         public static void imprimirTabuleiro(Tabuleiro tab) {
             for(int i = 0; i < tab.linhas; i++) {
                 Console.Write(8 - i + " ");
