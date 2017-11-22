@@ -37,7 +37,7 @@ namespace tabuleiro {
             return false;
         }
         // metodo para verificar se pode mover para a posição passada como argumento
-        public bool podeMover(Posicao pos) {
+        public bool movimentoPossivel(Posicao pos) {
             return movimentosPossiveis()[pos.linha,pos.coluna];
         }
 
