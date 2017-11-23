@@ -119,6 +119,48 @@ namespace xadrez {
                 desfazMovimento(origem, destino, capturada);
                 throw new TabuleiroException("Você não pode se colocar em xeque!");
             }
+
+            Peca p = tab.peca(destino);
+
+            // # JOGADA ESPECIAL PROMOÇÃO
+            if(p is Peao) {
+                if((p.cor == Cor.Branco && destino.linha == 0) || (p.cor == Cor.Preto && destino.linha == 7)) {
+                    tab.retirarPeca(destino);
+                    pecas.Remove(p);
+                    Peca dama = new Dama(tab, p.cor);
+                    Peca cavalo = new Cavalo(tab, p.cor);
+                    Peca bispo = new Bispo(tab, p.cor);
+                    Peca torre = new Torre(tab, p.cor);
+                        Console.WriteLine("Escolha a peça que substituira o Peão: ");
+                        Console.WriteLine("DAMA(rainha) = 1");
+                        Console.WriteLine("CAVALO       = 2");
+                        Console.WriteLine("BISPO        = 3");
+                        Console.WriteLine("TORRE        = 4");
+                        Console.Write("Sua Escolha: ");
+                        int num = int.Parse(Console.ReadLine());
+                        switch (num) {
+                            case 1:
+                                tab.colocarPeca(dama, destino);
+                                pecas.Add(dama);
+                                break;
+                            case 2:
+                                tab.colocarPeca(cavalo, destino);
+                                pecas.Add(cavalo);
+                                break;
+                            case 3:
+                                tab.colocarPeca(bispo, destino);
+                                pecas.Add(bispo);
+                                break;
+                            case 4:
+                                tab.colocarPeca(torre, destino);
+                                pecas.Add(torre);
+                                break;
+                            default:
+                                throw new TabuleiroException("Escolha incorreta!, PERDEU A PEÇA!!!");
+                    }
+                }
+            }
+
             if (estaEmXeque(adversaria(jogadorAtual))) {
                 xeque = true;
             }else {
@@ -131,7 +173,6 @@ namespace xadrez {
                 turno++;
                 mudarJogador();
             }
-            Peca p = tab.peca(destino);
             // # JOGADA ESPECIAL EN PASSANT
             vulneravelEnPassant = (p is Peao && (destino.linha == origem.linha - 2 || destino.linha == origem.linha + 2)) ? p : null;
                     
